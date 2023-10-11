@@ -17,17 +17,38 @@
   <div id="counter">Count: -</div>
   <br>
 
-  <button id="startButton">Start Timer</button>
+  <button id="startButton" onclick="startTime()">Start Timer</button>
   <button id="reactButton" onclick="recordTime()">React</button>
+  <p>Time: <span id="countdown">9</span></p>
 
   <script> 
 
-  let reactTime;
+    let reactTime;
 
-  function recordTime() {
-    reactTime = Date.now();
-    console.log("Reaction Time: " + reactTime + "ms");
-  }
+    function recordTime() {
+      reactTime = Date.now();
+      console.log("Reaction Time: " + reactTime + "ms");
+    }
+
+    function startTime() {
+      for (let i = 0; i < 9; i++) {
+        setTimeout(function() {
+            document.getElementById("countdown").innerHTML = i;
+        },
+        (8 - i) * 1000);
+      }
+
+      setTimeout(function() {
+        if (reactTime === undefined) {
+            document.getElementById("target").innerHTML = "Too Slow";
+        }
+        else {
+            const endTime = Date.now();
+            const elapsed = endTime - reactTime;
+            document.getElementById("target").innerHTML = "Time was " + elapsed + "ms";
+        }
+      }, 8000);
+    }
   </script>
 
 </body>
