@@ -17,8 +17,8 @@
   <div id="counter">Count: -</div>
   <br>
 
-  <button type="button" class="btn btn-primary" onclick="recordTime()">Start Timer</button>
-  <button type="button" class="btn btn-primary" onclick="buttonPress2()">React</button>
+  <button id="startButton">Start Timer</button>
+  <button id="reactButton" onclick="recordTime()">React</button>
 
   <script> 
 
@@ -27,12 +27,6 @@
   function recordTime() {
     reactTime = Date.now();
     console.log("Reaction Time: " + reactTime + "ms");
-  }
-
-  function buttonPress2() {
-    setTimeout(()=>{
-      document.getElementById('target').style.color = "red"
-    }, 3000)
   }
   </script>
 
