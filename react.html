@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Haebin's setTimeout Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <h2>Haebin's Speed Check</h2><br>
+
+  <div id="target">Your time: -</div>
+  <div id="counter">Count: -</div>
+  <br>
+
+  <button type="button" class="btn btn-primary" onclick="recordTime()">Start Timer</button>
+  <button type="button" class="btn btn-primary" onclick="buttonPress2()">React</button>
+
+  <script> 
+
+  let reactTime;
+
+  function recordTime() {
+    reactTime = Date.now();
+    console.log("Reaction Time: " + reactTime + "ms");
+  }
+
+  function buttonPress2() {
+    setTimeout(()=>{
+      document.getElementById('target').style.color = "red"
+    }, 3000)
+  }
+  </script>
+
+</body>
+</html>
